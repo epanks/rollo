@@ -16,7 +16,7 @@ class CreateTblsatoutputTable extends Migration
         Schema::create('tblsatoutput', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('satoutput', 3)->unique();
-            $table->string('nmsatoutput', 15);
+            $table->string('nmsatoutput', 15)->nullable();
             $table->timestamps();
         });
     }

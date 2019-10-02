@@ -1,7 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-
+@if(session('sukses'))
+    <div class="alert alert-success" role="alert">
+        {{session('sukses')}}
+    </div>
+@endif
 <div class="row mt-5">
     <div class="col-md-12">
         <div class="card">
@@ -9,7 +13,7 @@
                 <h3 class="card-title">Daftar Paket</h3>
 
                 <div class="card-tools">
-                    <button class="btn btn-success">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addNew">
                         Add New
                         <i class="fas fa-user-plus fa-fw"></i>
                     </button>
@@ -21,14 +25,14 @@
                     <tbody>
                         <tr>
                             <th>No</th>
+                            <th>Kode Satker</th>
                             <th>Nama Paket</th>
                             <th>Pagu</th>
-                            <th>Output</th>
-                            <th>Satuan Output</th>
-                            <th>Outcome</th>
-                            <th>Satuan Outcome</th>
+                            <th>Rencana Keuangan</th>
+                            <th>Rencana Fisik</th>
                             <th>Progres Keuangan</th>
                             <th>Progres Fisik</th>
+                            <th>Satker ID</th>
                             <th>Modify</th>
                         </tr>
 
@@ -36,21 +40,21 @@
                     
                         <tr>
                             <td>{{$paket->id}}</td>
+                            <td>{{$paket->kdsatker}}</td>
                             <td>{{$paket->nmpaket}}</td>
                             <td>{{$paket->pagurmp}}</td>
-                            <td>{{$paket->output}}</td>
-                            <td>{{$paket->satoutput}}</td>
-                            <td>{{$paket->outcome}}</td>
-                            <td>{{$paket->satoutcome}}</td>
+                            <td>{{$paket->rencana_keu}}</td>
+                            <td>{{$paket->rencana_fisik}}</td>
                             <td>{{$paket->progres_keu}}</td>
                             <td>{{$paket->progres_fisik}}</td>
+                            <td>{{$paket->tblsatker_id}}</td>
                             <td>
-                                <a href="#">
+                                <a href="/paket/{{$paket->id}}/edit">
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="#">
-                                    <i class="fa fa-trash red"></i>
+                                <a href="/paket/{{$paket->id}}/delete">
+                                    <i class="fa fa-trash red" onclick="return confirm('Yakin data mau dihapus')"></i>
                                 </a>
                             </td>
                         </tr>
@@ -62,6 +66,56 @@
         
         </div>
        
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="addNewLabel">Add New</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">                    
+                    <form action="/paket/create"  method="POST">
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            <label for="kdsatker">Kode Satker</label>
+                            <input name="kdsatker" type="text" class="form-control" id="kdsatker" placeholder="Kode Satker">
+                        </div>
+                        <div class="form-group">
+                            <label for="nmpaket">Nama Paket</label>
+                            <input name="nmpaket" type="text" class="form-control" id="nmpaket" placeholder="Nama Paket">
+                        </div>
+                        <div class="form-group">
+                            <label for="pagurmp">Pagu</label>
+                            <input name="pagurmp" type="number" class="form-control" id="pagurmp" placeholder="Pagu">
+                        </div>
+                        <div class="form-group">
+                            <label for="rencana_keu">Rencana Keuangan</label>
+                            <input name="rencana_keu" type="number" class="form-control" id="rencana_keu" placeholder="Rencana Keuangan">
+                        </div>
+                        <div class="form-group">
+                            <label for="rencana_fisik">Rencana Fisik</label>
+                            <input name="rencana_fisik" type="number" class="form-control" id="rencana_fisik" placeholder="Rencana Fisik">
+                        </div>   
+                        <div class="form-group">
+                            <label for="progres_keu">Progres Keuangan</label>
+                            <input name="progres_keu" type="number" class="form-control" id="progres_keu" placeholder="Progres Keuangan">
+                        </div>
+                        <div class="form-group">
+                            <label for="progres_fisik">Progres Fisik</label>
+                            <input name="progres_fisik" type="number" class="form-control" id="progres_fisik" placeholder="Progres Fisik">
+                        </div>    
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                </div>            
+            </div>
+        </div>
     </div>
 </div>
 

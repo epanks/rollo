@@ -15,27 +15,18 @@ class CreateTblpaket1Table extends Migration
     {
         Schema::create('tblpaket1', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kdpaket', 3)->nullable();
-            $table->string('kdspaket', 3)->nullable();
+            $table->string('kdsatker', 8);
             $table->string('nmpaket', 254);
             $table->decimal('pagurmp', 20, 0);
-            $table->decimal('output', 10, 2)->nullable();
-            $table->string('satoutput', 20)->nullable();
-            $table->decimal('outcome', 10, 2)->nullable();
-            $table->string('satoutcome', 20)->nullable();
-            $table->decimal('progres_keu', 3, 2)->nullable();
-            $table->decimal('progres_fisik', 3, 2)->nullable();
-            $table->unsignedBigInteger('tbllokasi_id')->nullable();
+            $table->decimal('rencana_keu', 5, 2)->nullable();
+            $table->decimal('rencana_fisik', 5, 2)->nullable();
+            $table->decimal('progres_keu', 5, 2)->nullable();
+            $table->decimal('progres_fisik', 5, 2)->nullable();
             $table->year('ta')->nullable();
             $table->unsignedBigInteger('tblsatker_id')->nullable();
-            $table->unsignedBigInteger('tblpaket2_id')->nullable();
-            $table->timestamps();
+            $table->timestamps()->current_timestamp();
 
             $table->foreign('tblsatker_id')->references('id')->on('tblsatker');
-            $table->foreign('tblpaket2_id')->references('id')->on('tblpaket2');
-            $table->foreign('tbllokasi_id')->references('id')->on('tbllokasi');
-            $table->foreign('satoutput')->references('satoutput')->on('tblsatoutput');
-            $table->foreign('satoutcome')->references('satoutcome')->on('tblsatoutcome');
         });
     }
 
