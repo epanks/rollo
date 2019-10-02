@@ -77,13 +77,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/balai" class="nav-link">
                   <i class="fas fa-building nav-icon purple"></i>
                   <p>Balai</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/satker" class="nav-link">
                   <i class="fas fa-users nav-icon teal"></i>
                   <p>Satker</p>
                 </a>
