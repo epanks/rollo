@@ -19,8 +19,6 @@ class CreateTblkecamatanTable extends Migration
             $table->string('nmkecamatan', 191);
             $table->string('kdkabupaten', 4);
             $table->timestamps();
-
-            $table->foreign('kdkabupaten')->references('kdkabupaten')->on('tblkabupaten');
         });
     }
 

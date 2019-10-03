@@ -42,4 +42,10 @@ class PaketController extends Controller
         $data_paket->delete($data_paket);
         return redirect('/paket')->with('sukses', 'Data berhasil dihapus');
     }
+    // public function list($kdsatker)
+    // {
+    //     $data_list = Paket::find($kdsatker);
+    //     dd($data_list);
+    //     return $data_list;
+    // }
 }

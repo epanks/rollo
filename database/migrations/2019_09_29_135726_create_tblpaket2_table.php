@@ -23,28 +23,15 @@ class CreateTblpaket2Table extends Migration
             $table->string('kdjnskon', 3)->nullable();
             $table->string('kdpengadaan', 3)->nullable();
             $table->string('kdoutput', 3)->nullable();
-            $table->unsignedBigInteger('tblsatoutput_id');
-            $table->unsignedBigInteger('tblsatoutcome_id');
-            $table->unsignedBigInteger('tblkontrak_id');
-            $table->unsignedBigInteger('tblmasalah_id');
-            $table->unsignedBigInteger('tblnote_id');
-            $table->unsignedBigInteger('tblprocurement_id');
-            $table->unsignedBigInteger('tblabjiat_id');
-            $table->unsignedBigInteger('tblpaket1_id');
+            $table->unsignedBigInteger('satoutput_id');
+            $table->unsignedBigInteger('satoutcome_id');
+            $table->unsignedBigInteger('kontrak_id');
+            $table->unsignedBigInteger('masalah_id');
+            $table->unsignedBigInteger('note_id');
+            $table->unsignedBigInteger('procurement_id');
+            $table->unsignedBigInteger('abjiat_id');
+            $table->unsignedBigInteger('paket1_id');
             $table->timestamps();
-
-            $table->foreign('tblsatoutput_id')->references('id')->on('tblsatoutput');
-            $table->foreign('tblsatoutcome_id')->references('id')->on('tblsatoutcome');
-            $table->foreign('tblabjiat_id')->references('id')->on('tblabjiat');
-            $table->foreign('tblkontrak_id')->references('id')->on('tblkontrak');
-            $table->foreign('tblmasalah_id')->references('id')->on('tblmasalah');
-            $table->foreign('tblnote_id')->references('id')->on('tblnote');
-            $table->foreign('tblprocurement_id')->references('id')->on('tblprocurement');
-            $table->foreign('kdjnspaket')->references('kdjnspaket')->on('tblkdjnspaket');
-            $table->foreign('kdjnskon')->references('kdjnskon')->on('tblkdjnskon');
-            $table->foreign('kdpengadaan')->references('kdpengadaan')->on('tblkdpengadaan');
-            $table->foreign('kdoutput')->references('kdoutput')->on('tblkdoutput');
-            $table->foreign('tblpaket1_id')->references('id')->on('tblpaket1');
         });
     }
 

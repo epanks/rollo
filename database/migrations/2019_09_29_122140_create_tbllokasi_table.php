@@ -18,8 +18,6 @@ class CreateTbllokasiTable extends Migration
             $table->string('kdlokasi', 10)->nullable();
             $table->string('kddesa', 10)->nullable();
             $table->timestamps();
-
-            $table->foreign('kddesa')->references('kddesa')->on('tbldesa');
         });
     }
 

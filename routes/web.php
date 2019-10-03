@@ -26,7 +26,9 @@ Route::get('/paket/{id}/edit', 'PaketController@edit');
 Route::post('/paket/{id}/update', 'PaketController@update');
 Route::get('/paket/{id}/delete', 'PaketController@delete');
 
+
 Route::get('/balai', 'BalaiController@index');
 Route::get('/balai/{id}/profile', 'BalaiController@profile');
 
 Route::get('/satker', 'SatkerController@index');
+Route::get('/satker/{kdsatker}/list', 'SatkerController@list');

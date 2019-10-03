@@ -17,7 +17,7 @@ class CreateTblsatkerTable extends Migration
             $table->bigIncrements('id');
             $table->string('kdsatker', 8);
             $table->string('nmsatker', 130);
-            $table->unsignedBigInteger('tblbalai_id');
+            $table->unsignedBigInteger('balai_id');
             $table->timestamps();
         });
     }

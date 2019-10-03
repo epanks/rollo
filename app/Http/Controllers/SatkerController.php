@@ -16,4 +16,10 @@ class SatkerController extends Controller
         }
         return view('satker.index', ['data_satker' => $data_satker]);
     }
+    public function list($kdsatker)
+    {
+        $data_satker = Satker::findOrFail($kdsatker);
+        dd($data_satker);
+        return view('satker.list', ['data_satker' => $data_satker]);
+    }
 }

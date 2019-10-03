@@ -13,6 +13,6 @@ class Paket extends Model
 
     public function satker()
     {
-        return $this->belongsTo(Satker::class);
+        return $this->belongsTo('Satker', 'kdsatker', 'kdsatker');
     }
 }

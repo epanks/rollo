@@ -12,7 +12,7 @@ class BalaiController extends Controller
         if ($request->has('cari')) {
             $data_balai = Balai::where('nmbalai', 'LIKE', '%' . $request->cari . '%')->orWhere('kdsatker', 'LIKE', '%' . $request->cari . "%")->get();
         } else {
-            $data_balai = balai::paginate(10);
+            $data_balai = balai::paginate(20);
         }
         return view('balai.index', ['data_balai' => $data_balai]);
     }
@@ -20,6 +20,7 @@ class BalaiController extends Controller
     public function profile($id)
     {
         $data_balai = Balai::find($id);
-        return view('balai.profile', ['balai' => $data_balai]);
+        //dd($data_balai);
+        return view('balai.profile', ['data_balai' => $data_balai]);
     }
 }

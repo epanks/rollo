@@ -19,8 +19,6 @@ class CreateTbldesaTable extends Migration
             $table->string('nmdesa', 191);
             $table->string('kdkecamatan', 7);
             $table->timestamps();
-
-            $table->foreign('kdkecamatan')->references('kdkecamatan')->on('tblkecamatan');
         });
     }
 

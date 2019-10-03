@@ -16,7 +16,7 @@ class CreateTblbalaiTable extends Migration
         Schema::create('tblbalai', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nmbalai', 60);
-            $table->unsignedBigInteger('tblwilayah_id');
+            $table->unsignedBigInteger('wilayah_id');
             $table->timestamps();
         });
     }

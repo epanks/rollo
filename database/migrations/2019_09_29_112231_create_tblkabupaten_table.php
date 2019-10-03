@@ -19,8 +19,6 @@ class CreateTblkabupatenTable extends Migration
             $table->string('nmkabupaten', 191);
             $table->string('kdprovinsi', 2);
             $table->timestamps();
-
-            $table->foreign('kdprovinsi')->references('kdprovinsi')->on('tblprovinsi');
         });
     }
 
