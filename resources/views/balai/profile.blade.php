@@ -7,32 +7,26 @@
 
       <h1 class="profile-username text-center">{{$balai->nmbalai}}</h1>
 
-      <p class="text-muted text-center">Software Engineer</p>
+      <p class="text-muted text-center">Pusat Air Tanah dan Air Baku</p>
 
       <ul class="list-group list-group-unbordered">
           <div class="box">
-              <div class="box-header">
-                <h4 class="box-title">Daftar Satker</h4>
-              </div>
+             
               <!-- /.box-header -->
               <div class="box-body no-padding">
                 <table class="table table-striped">
                   <tbody><tr>
                     <th>No</th>
                     <th>Nama Satker</th>
-                    <th>Progress</th>
-                    <th>Label</th>
+                    <th>Pagu</th>
+                    <th>Progres </th>
                   </tr>
                   @foreach ($balai->satker as $satker)
                   <tr>
-                    <td>{{$satker->id}}</td>
-                    <td>{{$satker->nmsatker}}</td>
-                    <td>
-                      <div class="progress progress-xs">
-                        <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                      </div>
-                    </td>
-                    <td><span class="badge bg-red">55%</span></td>
+                    <td style="width: 10px"></a>{{$satker->id}}</td>
+                    <td><a href="#">{{$satker->nmsatker}}</td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   @endforeach                  
                 </tbody></table>
