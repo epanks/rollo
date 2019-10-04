@@ -25,7 +25,7 @@
                     <tbody>
                         <tr>
                             <th>No</th>
-                            <th>Nama Satker</th>
+                            <th>Nama Wilayah</th>
                             <th>Nama Paket</th>
                             <th>Pagu</th>
                             <th>Rencana Keuangan</th>
@@ -36,11 +36,11 @@
                             <th>Modify</th>
                         </tr>
 
-                    @foreach ($data_satker as $satker)  
+                    @foreach ($data_wilayah as $wilayah)  
                     
                         <tr>
-                            <td>{{$satker->id}}</td>
-                            <td>{{$satker->nmsatker}}</td>
+                            <td>{{$wilayah->id}}</td>
+                            <td><a href="/wilayah/{{$wilayah->id}}/profile">{{$wilayah->nmwilayah}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -49,11 +49,11 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <a href="/satker/{{$satker->id}}/edit">
+                                <a href="/wilayah/{{$wilayah->id}}/edit">
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="/satker/{{$satker->id}}/delete">
+                                <a href="/wilayah/{{$wilayah->id}}/delete">
                                     <i class="fa fa-trash red" onclick="return confirm('Yakin data mau dihapus')"></i>
                                 </a>
                             </td>
@@ -62,7 +62,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{$data_satker->links()}}
+                {{$data_wilayah->links()}}
             </div>
         
         </div>

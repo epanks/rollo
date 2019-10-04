@@ -1,17 +1,78 @@
 @extends('layouts.master')
 @section('content')
+
 <div class="content">
   <div class="box box-primary">
     <div class="box-body box-profile">
-      <img class="profile-user-img img-responsive text-center" src="/img/logopu.jpg" alt="User profile picture">
+      <img class="profile-user-img center" src="/img/logopu.jpg" alt="User profile picture">
 
-      <h1 class="profile-username text-center">{{$data_balai->nmbalai}}</h1>
+      <h1 class="profile-username "><h1></h1></h1>
 
-      <p class="text-muted text-center">Pusat Air Tanah dan Air Baku</p>
+      <p class="text-muted">Pusat Air Tanah dan Air Baku</p>
 
       <ul class="list-group list-group-unbordered">
           <div class="box">
-             
+              <div class="row">
+                  <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                      <span class="info-box-icon bg-info elevation-1"><i class="fas fa-list-ol"></i></span>
+        
+                      <div class="info-box-content">
+                        <span class="info-box-text">Jumlah Paket</span>
+                        <span class="info-box-number">
+                          {{$paket->count()}}
+                          <small>paket</small>
+                        </span>
+                      </div>
+                      <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                      <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-dollar-sign"></i></span>
+        
+                      <div class="info-box-content">
+                        <span class="info-box-text">Jumlah Pagu</span>
+                        <span class="info-box-number">{{number_format($paket->sum('pagurmp'))}}</span>
+                      </div>
+                      <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                  </div>
+                  <!-- /.col -->
+        
+                  <!-- fix for small devices only -->
+                  <div class="clearfix hidden-md-up"></div>
+        
+                  <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                      <span class="info-box-icon bg-success elevation-1"><i class="fas fa-chart-pie"></i></span>
+        
+                      <div class="info-box-content">
+                        <span class="info-box-text">Prosentase Keuangan</span>
+                        <span class="info-box-number">760</span>
+                      </div>
+                      <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                      <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chart-line"></i></span>
+        
+                      <div class="info-box-content">
+                        <span class="info-box-text">Prosentase Fisik</span>
+                        <span class="info-box-number">2,000</span>
+                      </div>
+                      <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                  </div>
+                  <!-- /.col -->
+                </div>
               <!-- /.box-header -->
               <div class="box-body no-padding">
                 <table class="table table-striped">
@@ -21,11 +82,11 @@
                     <th>Pagu</th>
                     <th>Progres </th>
                   </tr>
-                  @foreach ($data_balai->satker as $satker)
+                  @foreach($paket as $no => $pkt)
                   <tr>
-                    <td style="width: 10px"></a>{{$satker->id}}</td>
-                    <td><a href="/satker/{{$satker->id}}/list">{{$satker->nmsatker}}</td>
-                    <td></td>
+                  <td style="width: 10px"></a>{{++$no}}</td>
+                    <td><a href="#">{{$pkt->nmpaket}}</td>
+                    <td class="text-right">{{number_format($pkt->pagurmp)}}</td>
                     <td></td>
                   </tr>
                   @endforeach                  
@@ -46,8 +107,8 @@
         <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">CPU Traffic</span>
-          <span class="info-box-number">90<small>%</small></span>
+          <span class="info-box-text">Jumlah Paket</span>
+          <span class="info-box-number">{{$paket->count()}}<small>%</small></span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -59,8 +120,8 @@
         <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Likes</span>
-          <span class="info-box-number">41,410</span>
+          <span class="info-box-text">Pagu</span>
+          <span class="info-box-number">{{number_format($paket->sum('pagurmp'))}}</span>
         </div>
         <!-- /.info-box-content -->
       </div>

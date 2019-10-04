@@ -28,7 +28,12 @@ Route::get('/paket/{id}/delete', 'PaketController@delete');
 
 
 Route::get('/balai', 'BalaiController@index');
-Route::get('/balai/{id}/profile', 'BalaiController@profile');
+Route::get('/balai/{balai}/profile', 'BalaiController@profile');
+//Route::get('/balai/{id?}/profile', 'BalaiController@profile');
 
 Route::get('/satker', 'SatkerController@index');
-Route::get('/satker/{kdsatker}/list', 'SatkerController@list');
+Route::get('/satker/{id}/list', 'SatkerController@list');
+
+
+Route::get('/wilayah', 'WilayahController@index');
+Route::get('/wilayah/{id}/profile', 'WilayahController@profile');

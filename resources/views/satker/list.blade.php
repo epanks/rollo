@@ -9,64 +9,67 @@
 
       <p class="text-muted text-center">Pusat Air Tanah dan Air Baku</p>
       
-  <div class="row">
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box">
+            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-list-ol"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">CPU Traffic</span>
-          <span class="info-box-number">90<small>%</small></span>
+            <div class="info-box-content">
+              <span class="info-box-text">Jumlah Paket</span>
+              <span class="info-box-number">
+                {{$data_satker->count()}}
+                <small>paket</small>
+              </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
         </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-dollar-sign"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">Likes</span>
-          <span class="info-box-number">41,410</span>
+            <div class="info-box-content">
+              <span class="info-box-text">Pagu</span>
+              <span class="info-box-number">{{number_format($data_satker->sum('pagurmp'))}}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
         </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
+        <!-- /.col -->
 
-    <!-- fix for small devices only -->
-    <div class="clearfix visible-sm-block"></div>
+        <!-- fix for small devices only -->
+        <div class="clearfix hidden-md-up"></div>
 
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-chart-pie"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">Sales</span>
-          <span class="info-box-number">760</span>
+            <div class="info-box-content">
+              <span class="info-box-text">Progres Keuangan</span>
+              <span class="info-box-number">760</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
         </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-xs-12">
-      <div class="info-box">
-        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chart-line"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">New Members</span>
-          <span class="info-box-number">2,000</span>
+            <div class="info-box-content">
+              <span class="info-box-text">Progres Fisik</span>
+              <span class="info-box-number">2,000</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
         </div>
-        <!-- /.info-box-content -->
+        <!-- /.col -->
       </div>
-      <!-- /.info-box -->
-    </div>
-      <!-- /.col -->
-  </div>
     <!-- Small boxes (Stat box) -->
 
       <ul class="list-group list-group-unbordered">
@@ -81,9 +84,9 @@
                     <th>Pagu</th>
                     <th>Progres </th>
                   </tr>
-                  @foreach ($data_satker as $paket)
+                  @foreach ($data_satker as $no =>$paket)
                   <tr>
-                    <td style="width: 10px"></a>{{$paket->id}}</td>
+                    <td style="width: 10px"></a>{{++$no}}</td>
                     <td>{{$paket->nmpaket}}</td>
                     <td class="text-right">{{number_format($paket->pagurmp)}}</td>
                     <td></td>
@@ -91,14 +94,6 @@
                   </tr>
                   @endforeach                  
                 </tbody>
-                <tfoot>
-                    <th>No</th>
-                    <th>Nama Satker</th>
-                    <th>{{$paket->where('pagurmp','<=','$pagurmp')->count()}}</th>
-                    <th>Progres </th>
-                </tfoot>
-                {{-- @endforeach   --}}
-              {{-- <td>{{$data_satker->sum(pagurmp)}}</td> --}}
               </table>
               
               </div>

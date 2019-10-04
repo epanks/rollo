@@ -12,6 +12,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>AdminLTE 3 | Starter</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="/css/app.css">
+  <style>
+      .img-container {
+        text-align: center;
+      }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" id="app">
@@ -74,8 +79,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Balai
                 <i class="right fas fa-angle-left"></i>
               </p>
-            </a>
+            </a>            
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/wilayah" class="nav-link">
+                  <i class="fas fa-map nav-icon purple"></i>
+                  <p>Wilayah</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="/balai" class="nav-link">
                   <i class="fas fa-building nav-icon purple"></i>

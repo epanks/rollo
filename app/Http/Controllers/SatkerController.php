@@ -19,10 +19,11 @@ class SatkerController extends Controller
     public function list($id)
     {
         $data_satker = Satker::find($id)->paket()->paginate(10);
-        //$jumlah = 
-        //->sum('pagurmp');
-        // ->sum('pagurmp');
-        // dd($data_satker);
+
         return view('satker.list', ['data_satker' => $data_satker]);
     }
+    // public function jumlah()
+    // {
+    //     foreach($this->)
+    // }
 }

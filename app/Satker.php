@@ -21,4 +21,11 @@ class Satker extends Model
     {
         return $this->hasMany(Paket::class);
     }
+
+    // public function jumlah()
+    // {
+    //     foreach($this->paket as $paket){
+    //         $total = $total + $mapel->
+    //     }
+    // }
 }

@@ -62,6 +62,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{$data_balai->links()}}
             </div>
         
         </div>

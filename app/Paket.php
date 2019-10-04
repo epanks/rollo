@@ -15,4 +15,9 @@ class Paket extends Model
     {
         return $this->belongsTo(Satker::class);
     }
+
+    // public function jumlah()
+    // {
+    //     return 'jumlah';
+    // }
 }
