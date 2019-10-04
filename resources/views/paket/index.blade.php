@@ -61,6 +61,13 @@
                         
                         @endforeach
                     </tbody>
+                    <tfoot>
+                            <th>No</th>
+                            <th>Kode Satker</th>
+                            <th>Nama Satker</th>
+                            <th>{{$paket->sum('pagurmp')}}</th>
+                            <th>Progres </th>
+                        </tfoot>
                 </table>
                 {{$data_paket->links()}}
             </div>

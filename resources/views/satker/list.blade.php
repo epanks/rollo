@@ -5,7 +5,7 @@
     <div class="box-body box-profile">
       <img class="profile-user-img img-responsive text-center" src="/img/logopu.jpg" alt="User profile picture">
 
-    <h1 class="profile-username text-center">{{$data_satker->nmsatker}}</h1>
+    <h1 class="profile-username text-center"></h1>
 
       <p class="text-muted text-center">Pusat Air Tanah dan Air Baku</p>
       
@@ -81,17 +81,26 @@
                     <th>Pagu</th>
                     <th>Progres </th>
                   </tr>
-                  @foreach ($data_satker->paket as $paket)
+                  @foreach ($data_satker as $paket)
                   <tr>
                     <td style="width: 10px"></a>{{$paket->id}}</td>
                     <td>{{$paket->nmpaket}}</td>
-                    <td>{{$paket->pagurmp}}</td>
+                    <td class="text-right">{{number_format($paket->pagurmp)}}</td>
                     <td></td>
+                    <th></th>
                   </tr>
                   @endforeach                  
                 </tbody>
+                <tfoot>
+                    <th>No</th>
+                    <th>Nama Satker</th>
+                    <th>{{$paket->where('pagurmp','<=','$pagurmp')->count()}}</th>
+                    <th>Progres </th>
+                </tfoot>
+                {{-- @endforeach   --}}
+              {{-- <td>{{$data_satker->sum(pagurmp)}}</td> --}}
               </table>
-              {{$data_satker->links()}}
+              
               </div>
               <!-- /.box-body -->
             </div>
