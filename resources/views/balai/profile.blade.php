@@ -24,7 +24,7 @@
                   @foreach ($data_balai->satker as $satker)
                   <tr>
                     <td style="width: 10px"></a>{{$satker->id}}</td>
-                    <td><a href="/satker/{{$satker->kdsatker}}/list">{{$satker->nmsatker}}</td>
+                    <td><a href="/satker/{{$satker->id}}/list">{{$satker->nmsatker}}</td>
                     <td></td>
                     <td></td>
                   </tr>

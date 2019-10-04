@@ -19,6 +19,6 @@ class Satker extends Model
 
     public function paket()
     {
-        return $this->hasMany('Paket', 'kdsatker', 'kdsatker');
+        return $this->hasMany(Paket::class);
     }
 }

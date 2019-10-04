@@ -19,6 +19,7 @@ class CreateTblpaket1Table extends Migration
             $table->string('nmpaket', 254);
             $table->decimal('pagurmp', 20, 0);
             $table->year('ta')->nullable();
+            $table->string('satker_id', 8);
             $table->timestamps();
         });
     }

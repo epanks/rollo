@@ -5,41 +5,10 @@
     <div class="box-body box-profile">
       <img class="profile-user-img img-responsive text-center" src="/img/logopu.jpg" alt="User profile picture">
 
-      <h1 class="profile-username text-center"></h1>
+    <h1 class="profile-username text-center">{{$data_satker->nmsatker}}</h1>
 
       <p class="text-muted text-center">Pusat Air Tanah dan Air Baku</p>
-
-      <ul class="list-group list-group-unbordered">
-          <div class="box">
-             
-              <!-- /.box-header -->
-              <div class="box-body no-padding">
-                <table class="table table-striped">
-                  <tbody><tr>
-                    <th>No</th>
-                    <th>Nama Satker</th>
-                    <th>Pagu</th>
-                    <th>Progres </th>
-                  </tr>
-                  @foreach ($data_satker->paket as $paket)
-                  <tr>
-                    <td style="width: 10px"></a>{{$paket>kdsatker}}</td>
-                    <td>{{$paket>nmpaket}}</td>
-                    <td>{{$paket>pagurmp}}</td>
-                    <td></td>
-                  </tr>
-                  @endforeach                  
-                </tbody></table>
-              </div>
-              <!-- /.box-body -->
-            </div>
-      </ul>
-
-      <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-    </div>
-    <!-- /.box-body -->
-  </div>
-
+      
   <div class="row">
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
@@ -99,84 +68,39 @@
       <!-- /.col -->
   </div>
     <!-- Small boxes (Stat box) -->
-    <div class="row mt-5">
-      <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="small-box bg-info">
-          <div class="inner">
-            <h3>150</h3>
 
-            <p>Jumah Paket</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-bag"></i>
-          </div>
-          <a href="#" class="small-box-footer">
-            More info
-            <i class="fas fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div>
-      <!-- ./col -->
-      <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="small-box bg-success">
-          <div class="inner">
-            <h3>2 T</h3>
+      <ul class="list-group list-group-unbordered">
+          <div class="box">
+             
+              <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <table class="table table-striped">
+                  <tbody><tr>
+                    <th>No</th>
+                    <th>Nama Satker</th>
+                    <th>Pagu</th>
+                    <th>Progres </th>
+                  </tr>
+                  @foreach ($data_satker->paket as $paket)
+                  <tr>
+                    <td style="width: 10px"></a>{{$paket->id}}</td>
+                    <td>{{$paket->nmpaket}}</td>
+                    <td>{{$paket->pagurmp}}</td>
+                    <td></td>
+                  </tr>
+                  @endforeach                  
+                </tbody>
+              </table>
+              {{$data_satker->links()}}
+              </div>
+              <!-- /.box-body -->
+            </div>
+      </ul>
 
-            <p>Total Pagu</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-stats-bars"></i>
-          </div>
-          <a href="#" class="small-box-footer">
-            More info
-            <i class="fas fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div>
-      <!-- ./col -->
-      <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="small-box bg-warning">
-          <div class="inner">
-            <h3>44
-            <sup style="font-size: 20px">%</sup>
-            </h3>
-
-            <p>Progres Keuangan</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-person-add"></i>
-          </div>
-          <a href="#" class="small-box-footer">
-            More info
-            <i class="fas fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div>
-      <!-- ./col -->
-      <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="small-box bg-danger">
-          <div class="inner">
-            <h3>
-            65
-            <sup style="font-size: 20px">%</sup>
-            </h3>
-
-            <p>Progres Fisik</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-pie-graph"></i>
-          </div>
-          <a href="#" class="small-box-footer">
-            More info
-            <i class="fas fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div>
-      <!-- ./col -->
+      
     </div>
+    <!-- /.box-body -->
+  </div>
+
   </div>
 @endsection
