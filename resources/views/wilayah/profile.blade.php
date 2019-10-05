@@ -14,7 +14,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>{{$data_wilayah->count()}}</h3>
-    
+
                 <p>Jumah Paket</p>
               </div>
               <div class="icon">
@@ -32,7 +32,7 @@
             <div class="small-box bg-success">
               <div class="inner">
                 <h3>2 T</h3>
-    
+
                 <p>Total Pagu</p>
               </div>
               <div class="icon">
@@ -52,7 +52,7 @@
                 <h3>44
                 <sup style="font-size: 20px">%</sup>
                 </h3>
-    
+
                 <p>Progres Keuangan</p>
               </div>
               <div class="icon">
@@ -73,7 +73,7 @@
                 65
                 <sup style="font-size: 20px">%</sup>
                 </h3>
-    
+
                 <p>Progres Fisik</p>
               </div>
               <div class="icon">
@@ -89,7 +89,7 @@
         </div>
       <ul class="list-group list-group-unbordered">
           <div class="box">
-             
+
               <!-- /.box-header -->
               <div class="box-body no-padding">
                 <table class="table table-striped">
@@ -99,14 +99,14 @@
                     <th>Pagu</th>
                     <th>Progres </th>
                   </tr>
-                  @foreach ($data_wilayah->load('balai','balai.satker.paket')->balai as $no => $wilayah)
+                  @foreach ($data_wilayah->balai as $no => $wilayah)
                   <tr>
                     <td style="width: 10px"></a>{{++$no}}</td>
                     <td><a href="/wilayah/{{$wilayah->id}}/list">{{$wilayah->nmbalai}}</td>
                     <td>{{$wilayah->count()}}</td>
                     <td></td>
                   </tr>
-                  @endforeach                  
+                  @endforeach
                 </tbody></table>
               </div>
               <!-- /.box-body -->
@@ -177,6 +177,6 @@
       <!-- /.col -->
   </div>
     <!-- Small boxes (Stat box) -->
-    
+
   </div>
 @endsection

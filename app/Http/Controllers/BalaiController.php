@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Balai;
+use App\Wilayah;
 
 class BalaiController extends Controller
 {
@@ -21,7 +22,8 @@ class BalaiController extends Controller
     {
 
         $paket = $balai->paket()->get();
+        $wilayah = Wilayah::class;
         //dd($paket);
-        return view('balai.profile', compact('paket'));
+        return view('balai.profile', compact('paket'), $wilayah);
     }
 }

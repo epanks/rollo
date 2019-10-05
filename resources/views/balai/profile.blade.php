@@ -16,7 +16,7 @@
                   <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
                       <span class="info-box-icon bg-info elevation-1"><i class="fas fa-list-ol"></i></span>
-        
+
                       <div class="info-box-content">
                         <span class="info-box-text">Jumlah Paket</span>
                         <span class="info-box-number">
@@ -32,7 +32,7 @@
                   <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box mb-3">
                       <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-dollar-sign"></i></span>
-        
+
                       <div class="info-box-content">
                         <span class="info-box-text">Jumlah Pagu</span>
                         <span class="info-box-number">{{number_format($paket->sum('pagurmp'))}}</span>
@@ -42,14 +42,14 @@
                     <!-- /.info-box -->
                   </div>
                   <!-- /.col -->
-        
+
                   <!-- fix for small devices only -->
                   <div class="clearfix hidden-md-up"></div>
-        
+
                   <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box mb-3">
                       <span class="info-box-icon bg-success elevation-1"><i class="fas fa-chart-pie"></i></span>
-        
+
                       <div class="info-box-content">
                         <span class="info-box-text">Prosentase Keuangan</span>
                         <span class="info-box-number">760</span>
@@ -62,7 +62,7 @@
                   <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box mb-3">
                       <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-chart-line"></i></span>
-        
+
                       <div class="info-box-content">
                         <span class="info-box-text">Prosentase Fisik</span>
                         <span class="info-box-number">2,000</span>
@@ -78,18 +78,18 @@
                 <table class="table table-striped">
                   <tbody><tr>
                     <th>No</th>
-                    <th>Nama Satker</th>
+                    <th>Nama Paket</th>
                     <th>Pagu</th>
                     <th>Progres </th>
                   </tr>
                   @foreach($paket as $no => $pkt)
                   <tr>
-                  <td style="width: 10px"></a>{{++$no}}</td>
+                  <td style="width: 10px"></a>{{$pkt->id}}</td>
                     <td><a href="#">{{$pkt->nmpaket}}</td>
                     <td class="text-right">{{number_format($pkt->pagurmp)}}</td>
                     <td></td>
                   </tr>
-                  @endforeach                  
+                  @endforeach
                 </tbody></table>
               </div>
               <!-- /.box-body -->

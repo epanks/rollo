@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-      </li>     
+      </li>
     </ul>
 
     <!-- SEARCH FORM -->
@@ -79,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Balai
                 <i class="right fas fa-angle-left"></i>
               </p>
-            </a>            
+            </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="/wilayah" class="nav-link">
@@ -146,12 +146,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Paket</p>
                 </a>
               </li>
-              {{-- <li class="nav-item">
-                <a href="/paket_emon" class="nav-link">
+              <li class="nav-item">
+                <a href="/paketexcel" class="nav-link">
                   <i class="nav-icon fas fa-list-alt blue"></i>
-                  <p>Paket Emonitoring</p>
+                  <p>Paket Excel</p>
                 </a>
-              </li> --}}
+              </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-list-alt blue"></i>
@@ -343,7 +343,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
   </aside>
 
-  <div class="content-wrapper">    
+  <div class="content-wrapper">
     <div class="content">
       <div class="container-fluid">
 
@@ -354,7 +354,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
     </div>
   </div>
- 
+
   <footer class="main-footer">
     <div class="float-right d-none d-sm-inline">
       Anything you want

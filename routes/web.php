@@ -26,6 +26,8 @@ Route::get('/paket/{id}/edit', 'PaketController@edit');
 Route::post('/paket/{id}/update', 'PaketController@update');
 Route::get('/paket/{id}/delete', 'PaketController@delete');
 
+Route::get('/paketexcel', 'PaketexcelController@index');
+
 
 Route::get('/balai', 'BalaiController@index');
 Route::get('/balai/{balai}/profile', 'BalaiController@profile');
