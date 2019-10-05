@@ -76,31 +76,64 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-building green"></i>
               <p>
-                Balai
+                Wilayah
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/wilayah" class="nav-link">
-                  <i class="fas fa-map nav-icon purple"></i>
-                  <p>Wilayah</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/balai" class="nav-link">
-                  <i class="fas fa-building nav-icon purple"></i>
-                  <p>Balai</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/satker" class="nav-link">
-                  <i class="fas fa-users nav-icon teal"></i>
-                  <p>Satker</p>
-                </a>
-              </li>
-            </ul>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/wilayah" class="nav-link">
+                        <i class="fas fa-map nav-icon purple"></i>
+                        <p>Wilayah Barat</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/balai" class="nav-link">
+                        <i class="fas fa-building nav-icon purple"></i>
+                        <p>Wilayah Timur</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
           </li>
+          <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-building green"></i>
+                  <p>
+                    Balai
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-building green"></i>
+                        <p>
+                            Balai
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/wilayah" class="nav-link">
+                            <i class="fas fa-map nav-icon purple"></i>
+                            <p>Wilayah</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/balai" class="nav-link">
+                            <i class="fas fa-building nav-icon purple"></i>
+                            <p>Balai</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/satker" class="nav-link">
+                            <i class="fas fa-users nav-icon teal"></i>
+                            <p>Satker</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+              </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tasks orange"></i>

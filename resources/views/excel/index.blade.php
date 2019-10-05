@@ -25,35 +25,33 @@
                     <tbody>
                         <tr>
                             <th>No</th>
-                            <th>Nama Wilayah</th>
-                            <th>Jumlah Paket</th>
+                            <th>Nama Paket</th>
+                            <th>Lokasi</th>
+                            <th>Sumber Dana</th>
                             <th>Pagu</th>
-                            <th>Rencana Keuangan</th>
-                            <th>Rencana Fisik</th>
                             <th>Progres Keuangan</th>
                             <th>Progres Fisik</th>
-                            <th>Satker ID</th>
+                            <th></th>
                             <th>Modify</th>
                         </tr>
 
-                    @foreach ($data_wilayah as $wilayah)
+                    @foreach ($data_excel as $excel)
 
                         <tr>
-                            <td>{{$wilayah->id}}</td>
-                            <td><a href="/wilayah/{{$wilayah->id}}/profile">{{$wilayah->nmwilayah}}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$excel->id}}</td>
+                            <td>{{$excel->nmpaket}}</td>
+                            <td>{{$excel->lokasi}}</td>
+                            <td>{{$excel->sumberdana}}</td>
+                            <td>{{$excel->pagurmp}}</td>
+                            <td>{{$excel->progres_keu}}</td>
+                            <td>{{$excel->progres_fisik}}</td>
                             <td></td>
                             <td>
-                                <a href="/wilayah/{{$wilayah->id}}/edit">
+                                <a href="#">
                                     <i class="fa fa-edit blue"></i>
                                 </a>
                                 /
-                                <a href="/wilayah/{{$wilayah->id}}/delete">
+                                <a href="#">
                                     <i class="fa fa-trash red" onclick="return confirm('Yakin data mau dihapus')"></i>
                                 </a>
                             </td>
@@ -62,7 +60,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{$data_wilayah->links()}}
+                {{$data_excel->links()}}
             </div>
 
         </div>

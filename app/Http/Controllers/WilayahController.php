@@ -20,7 +20,8 @@ class WilayahController extends Controller
     public function profile($id)
     {
         $data_wilayah = Wilayah::find($id);
+        //$data_paket = Paket::get();
         //dd($data_wilayah);
-        return view('wilayah.profile', ['data_wilayah' => $data_wilayah]);
+        return view('wilayah.profile', compact('data_wilayah'));
     }
 }

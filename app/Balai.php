@@ -19,8 +19,8 @@ class Balai extends Model
         return $this->hasManyThrough(Paket::class, Satker::class);
     }
 
-    // public function wilayah()
-    // {
-    //     return $this->belongsTo(Wilayah::class);
-    // }
+    public function wilayah()
+    {
+        return $this->belongsTo(Wilayah::class);
+    }
 }

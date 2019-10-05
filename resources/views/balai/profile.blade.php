@@ -6,7 +6,7 @@
     <div class="box-body box-profile">
       <img class="profile-user-img center" src="/img/logopu.jpg" alt="User profile picture">
 
-      <h1 class="profile-username "><h1></h1></h1>
+    <h1 class="profile-username "><h1>{{$nmbalai}}</h1></h1>
 
       <p class="text-muted">Pusat Air Tanah dan Air Baku</p>
 

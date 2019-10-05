@@ -22,8 +22,8 @@ class BalaiController extends Controller
     {
 
         $paket = $balai->paket()->get();
-        $wilayah = Wilayah::class;
+        $nmbalai = $balai->wilayah()->get();
         //dd($paket);
-        return view('balai.profile', compact('paket'), $wilayah);
+        return view('balai.profile', compact('paket', 'nmbalai'));
     }
 }
